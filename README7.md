@@ -8,8 +8,7 @@
 - **Software Link:** [User Registration System](https://phpgurukul.com/user-registration-login-and-user-management-system-with-admin-panel/)  
 - **Affected Version:** <= 3.3  
 - **Software Name:** User Registration & Login and User Management System With Admin Panel  
-- **Size:** 212 KB  
-- **Version:** v3.3  
+
 
 ---
 
