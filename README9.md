@@ -4,7 +4,7 @@
 **👨‍💻 BUG Author:**  
 
 ### 4m3rr0r
-
+ ** CVE-2025-7543 **
 ---
 
 ## 📦 Product Information
