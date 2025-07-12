@@ -12,7 +12,7 @@
 ### 📦 Product Information:
 
 * **Vendor Homepage:** [https://huashengdun.org](https://huashengdun.org)
-* **Software URL:** [https://webssh.huashengdun.org](https://webssh.huashengdun.org)
+* **Software URL:** [https://github.com/huashengdun/webssh](https://github.com/huashengdun/webssh)
 * **Affected Version:** <= **v1.6.2**
 * **BUG Author:** 4m3rr0r
 * **Discovery Date:** April 9, 2025
