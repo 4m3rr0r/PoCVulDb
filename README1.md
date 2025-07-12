@@ -156,6 +156,4 @@ $query->execute();
 
 ---
 
-### ⚠️ Final Note
 
-This vulnerability poses **serious risk** to the confidentiality and integrity of student records. An unauthenticated attacker can **compromise the full system** using automated tools. Immediate remediation is required.
