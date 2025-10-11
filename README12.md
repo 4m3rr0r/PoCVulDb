@@ -1,0 +1,107 @@
+# [Unrestricted File Upload] in [Bdtask Flight Booking Software B2C Portal] [v3.1]
+
+---
+
+### 👨‍💻 **BUG Author:**
+
+## 4m3rr0r
+
+---
+
+### 📦 **Product Information:**
+
+* **Vendor Homepage:** [https://www.bdtask.com](https://www.bdtask.com)
+* **Software Link:** [https://www.bdtask.com/flight-booking-software.php](https://www.bdtask.com/flight-booking-software.php)
+* **Affected Version:**  v3.1 or  Version unknown, latest as of 2025-10-11
+* **BUG Author:** 4m3rr0r
+
+---
+
+### 🛠 **Vulnerability Details**
+
+* **Type:** Unrestricted File Upload leading to Remote Code Execution (RCE)
+* **Affected URL:** `https://subah.bdtask-demo.com/b2c/package-information`
+* **Vulnerable Parameter:** `Image` (File Upload)
+* **Vulnerable Component:** The "Create/Edit Package" feature in the B2C user portal.
+
+---
+
+### 🧨 **Vulnerability Type**
+
+* **Unrestricted Upload of File with Dangerous Type**
+* **CWE ID:** CWE-434
+* **Severity Level:** CRITICAL
+* **CVSS Score:** 9.8 (Critical)
+
+---
+
+### 🧬 **Root Cause**
+
+The application's "Package Information" module in the B2C portal allows authenticated users to upload an image for a travel package. The file upload functionality fails to validate the file's extension or content type, permitting the upload of executable scripts (e.g., PHP web shells). The application saves the malicious file to a web-accessible directory, allowing the user to execute it by accessing the package's public view.
+
+---
+
+### ⚠️ **Impact**
+
+* **Full Server Compromise:** An authenticated B2C user can execute arbitrary commands on the server, leading to a complete system takeover.
+* **Data Breach:** Unauthorized access to the entire application database, including all user data, booking information, and potentially financial records.
+* **Website Defacement:** The attacker can alter or delete website content.
+* **Internal Network Pivot:** The compromised server can be used to launch attacks against other systems within the internal network.
+
+---
+
+### 📋 **Description**
+
+1.  **Vulnerability Details:**
+    * An authenticated user in the B2C portal can navigate to the "Manage Package" section.
+    * When creating a new package or editing an existing one, the form includes an "Image" upload field that lacks proper server-side validation.
+    * This allows a malicious file, such as a PHP web shell, to be uploaded instead of a standard image file.
+
+2.  **Attack Vectors:**
+    * The attacker uploads a PHP script through the package image upload form.
+    * After saving the package, the attacker views the public-facing page for that package.
+    * The uploaded shell is displayed as a broken image. Clicking on this "image" link executes the script.
+
+3.  **Attack Payload Example:**
+    * Create a file named `shell.php` with the following content:
+        ```php
+        <?php system($_GET['cmd']); ?>
+        ```
+    * Upload this file as the package image.
+
+---
+
+### 🔬 **Proof of Concept (PoC)**
+
+A video PoC can be recorded demonstrating the following steps and linked here: 
+
+[![Watch the video](https://img.youtube.com/vi/dbhks_hpwFk/0.jpg)](https://youtu.be/dbhks_hpwFk)
+
+
+1.  Log in to the B2C portal.
+2.  Navigate to **Manage Package -> Package Information**.
+3.  Choose to create a new package or edit an existing one.
+4.  For the **Image** field, upload the malicious `shell.php` file.
+5.  Save the changes.
+6.  View the package's public page. The uploaded shell will likely appear as a broken image icon.
+7.  Click on the broken image. The web shell will execute.
+
+
+---
+
+### 🛡 **Suggested Remediation**
+
+* **Implement a strict whitelist** for file extensions on the server-side (e.g., `jpg`, `jpeg`, `png`, `gif`). Reject all other file types.
+* **Verify the file's MIME type** and use image processing libraries (like GD or Imagick in PHP) to re-process uploaded images. This strips any non-image data and validates that the file is a true image.
+* **Store uploaded files outside the webroot**. Use a secure script to stream image data to the user, preventing any possibility of direct script execution.
+* **Rename uploaded files** to a random string upon storage to prevent attackers from guessing the file path.
+
+
+---
+
+### 📚 **References**
+
+* [OWASP Unrestricted File Upload](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload)
+* [CWE-434: Unrestricted Upload of File with Dangerous Type](https://cwe.mitre.org/data/definitions/434.html)
+
+---
