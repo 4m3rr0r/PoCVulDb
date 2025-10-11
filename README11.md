@@ -77,6 +77,7 @@ The application's file upload functionality within the B2B portal's transaction 
 
 A video PoC has been recorded demonstrating the following steps and is available at: 
 
+[![Watch the video](https://img.youtube.com/vi/AelgRlSQEqQ/0.jpg)](https://youtu.be/AelgRlSQEqQ)
 
 
 1.  Log in to the B2B portal.
