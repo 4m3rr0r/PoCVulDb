@@ -19,7 +19,7 @@
 ### 🛠 **Vulnerability Details**
 
 * **Type:** Unrestricted File Upload leading to Remote Code Execution (RCE)
-* **Affected URL:** `/admin/transaction/deposit`
+* **Affected URL:** `https://subah.bdtask-demo.com/subah_v3.1/admin/transaction/deposit`
 * **Vulnerable Parameter:** `Document` (File Upload)
 * **Vulnerable Component:** The "Record new transaction" feature in the B2B admin panel.
 
