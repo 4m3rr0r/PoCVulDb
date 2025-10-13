@@ -11,7 +11,7 @@
 ### 📦 **Product Information:**
 
 * **Vendor Homepage:** [https://www.bdtask.com](https://www.bdtask.com)
-* **Software Link / Demo URL:** [https://www.bdtask.com/sales-erp-software.php](https://www.bdtask.com/sales-erp-software.php)
+* **Software Link / Demo URL:** [https://codecanyon.net/item/erp-business-erp-solution-product-shop-company-management/19314578?irgwc=1&clickid=VpTxVqWs6xycUy62I-yUlUTDUkpyQiQdq1uV2k0&iradid=275988&irpid=1356783&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_1356783&utm_medium=affiliate&utm_source=impact_radius](https://codecanyon.net/item/erp-business-erp-solution-product-shop-company-management/19314578?irgwc=1&clickid=VpTxVqWs6xycUy62I-yUlUTDUkpyQiQdq1uV2k0&iradid=275988&irpid=1356783&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_1356783&utm_medium=affiliate&utm_source=impact_radius)
 * **Affected Version:** Latest version as of 2025-10-13
 * **BUG Author:** 4m3rr0r
 ---
