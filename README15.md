@@ -1,0 +1,85 @@
+# [Insecure Direct Object Reference (IDOR)] in [Pharmacy Management System v9.4]
+
+---
+
+### 👨‍💻 **BUG Author:**
+
+### 4m3rr0r
+
+---
+
+### 📦 **Product Information:**
+
+* **Vendor Homepage:** [https://www.bdtask.com](https://www.bdtask.com)
+* **Software Link:** [https://www.bdtask.com/pharmacy-management-system.php](https://www.bdtask.com/pharmacy-management-system.php)
+* **Demo URL:** [https://pharmacysoft.bdtask-demo.com/](https://pharmacysoft.bdtask-demo.com/)
+* **Affected Version:** v9.4
+* **BUG Author:** 4m3rr0r
+
+---
+
+### 🛠 **Vulnerability Details**
+
+* **Type:** Insecure Direct Object Reference (IDOR) / Broken Access Control
+* **Affected URL:** `/user/edit_user/{user_id}`
+* **Vulnerable Parameter:** The `user_id` identifier in the URL path.
+* **Vulnerable Component:** User profile management.
+
+---
+
+### 🧨 **Vulnerability Type**
+
+* **Broken Access Control**
+* **CWE ID:** CWE-639: Authorization Bypass Through User-Controlled Key
+* **Severity Level:** HIGH
+* **CVSS Score:** 8.8 (High)
+
+---
+
+### 🧬 **Root Cause**
+
+The application uses a predictable, sequential user ID in the URL to fetch and display user profile data. However, it fails to perform a server-side authorization check to verify if the currently authenticated user has the necessary permissions to view or edit the profile associated with the requested ID. This allows any authenticated user to access the profiles of other users simply by manipulating the ID in the URL.
+
+---
+
+### ⚠️ **Impact**
+
+* **Sensitive Information Disclosure:** An attacker can view the personal and account information of any user on the platform, including administrators, by iterating through user IDs.
+* **Privilege Escalation:** A low-privilege user can view the data of a high-privilege administrator, leading to vertical privilege escalation.
+* **Account Takeover:** the vulnerable endpoint also allows for profile modification (e.g., changing email or password), this vulnerability could be escalated to a full account takeover of any user, including the admin.
+* **Mass User Data Exfiltration:** An attacker could write a simple script to loop through all possible user IDs and harvest the personal data of the entire user base.
+
+---
+
+### 🔬 **Proof of Concept (PoC)**
+
+A video demonstrating this vulnerability has been recorded and can be viewed here:
+
+
+[![Watch the video](https://img.youtube.com/vi/Tr2LKs0bVAg/0.jpg)](https://youtu.be/Tr2LKs0bVAg)
+
+
+
+**Steps:**
+
+1.  Log in to the application as a non-administrative user. For example, log in as the "Account Head" with the email `urmi@em.com`.
+2.  Navigate to your own profile page, which will have a URL like:
+    `https://pharmacysoft.bdtask-demo.com/user/edit_user/3`
+3.  In the browser's address bar, change the final number (the user ID) from `3` to `1`, which is often the default ID for the primary administrator. The new URL is:
+    `https://pharmacysoft.bdtask-demo.com/user/edit_user/1`
+4.  Press Enter. The application will display the profile information for the administrator account, confirming the IDOR vulnerability.
+
+---
+
+### 🛡 **Suggested Remediation**
+
+* **Implement Server-Side Authorization Checks:** The most critical fix is to enforce access control on the server for every request. Before displaying user data, the backend code must verify that the logged-in user's ID matches the requested ID, or that the logged-in user has an administrative role.
+
+---
+
+### 📚 **References**
+
+* [OWASP Insecure Direct Object References (IDOR)](https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control)
+* [CWE-639: Authorization Bypass Through User-Controlled Key](https://cwe.mitre.org/data/definitions/639.html)
+
+---
