@@ -5,53 +5,34 @@ The goal is to improve **reproducibility** and support the **ethical study** of 
 
 ---
 
-## Disclaimer
-
-* This repository does not necessarily contain all information about the vulnerabilities listed, nor does it include every vulnerability I’ve discovered. The selection and level of detail are based on my personal judgment.  
-* This repository contains **only PoC reports for vulnerabilities I personally discovered** and that are publicly tracked with a CVE ID.  
-* Depending on the case, I may provide full, partial, or no PoC material. This decision depends on:
-  * Whether the vulnerability has been fixed.  
-  * The impact and severity of the issue.  
-  * The age of the vulnerability (e.g., whether unpatched systems remain at risk).  
-
-When there is no ethical concern and strong reproducibility value, I aim to provide:
-* Complete PoCs.  
-* Supplementary resources (e.g., Docker setups with patched versions).  
-* Any material useful for reproducibility and research.  
-
-All public disclosures are coordinated with maintainers whenever possible and clearly detailed in each report.
-
----
-
-## Repository Structure
-
-The repository is organized as follows:
-
-* **Reports** → Each vulnerability report is published as a **GitHub Issue**.  
-* **PoCs** → Each PoC, when available, is stored in a dedicated folder named after the corresponding CVE ID.  
-
-Each PoC is always linked in its related GitHub Issue.
-
----
-
-## Usage & Ethics
-
-* Use this repository **responsibly**.  
-* All content is intended for **educational and research purposes only**.  
-* Running PoCs on systems you do not own or have explicit permission to test is **illegal and unethical**.  
-
----
 
 ## My Research
 
-[CVE-2025-7534](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-7534.md)  
-[CVE-2025-7542](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-7542.md)  
-[CVE-2025-7543](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-7543.md)  
-[CVE-2025-7885](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-7885.md)  
-[CVE-2025-12288](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-12288.md)  
-[CVE-2025-12287](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-12287.md)  
-[CVE-2025-12223](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-12223.md)  
-[CVE-2025-12222](https://github.com/4m3rr0r/PoCVulDb/blob/main/CVE-2025-12222.md)  
+* **CVE-2026-6624** – https://nvd.nist.gov/vuln/detail/CVE-2026-6624
+* **CVE-2026-6623** – https://nvd.nist.gov/vuln/detail/CVE-2026-6623
+* **CVE-2026-6622** – https://nvd.nist.gov/vuln/detail/CVE-2026-6622
+* **CVE-2026-5031** – https://nvd.nist.gov/vuln/detail/CVE-2026-5031
+* **CVE-2026-1600** – https://nvd.nist.gov/vuln/detail/CVE-2026-1600
+* **CVE-2026-1599** – https://nvd.nist.gov/vuln/detail/CVE-2026-1599
+* **CVE-2026-1598** – https://nvd.nist.gov/vuln/detail/CVE-2026-1598
+* **CVE-2026-1597** – https://nvd.nist.gov/vuln/detail/CVE-2026-1597
+* **CVE-2025-13239** – https://nvd.nist.gov/vuln/detail/CVE-2025-13239
+* **CVE-2025-13238** – https://nvd.nist.gov/vuln/detail/CVE-2025-13238
+* **CVE-2025-13186** – https://nvd.nist.gov/vuln/detail/CVE-2025-13186
+* **CVE-2025-13185** – https://nvd.nist.gov/vuln/detail/CVE-2025-13185
+* **CVE-2025-13180** – https://nvd.nist.gov/vuln/detail/CVE-2025-13180
+* **CVE-2025-13179** – https://nvd.nist.gov/vuln/detail/CVE-2025-13179
+* **CVE-2025-13178** – https://nvd.nist.gov/vuln/detail/CVE-2025-13178
+* **CVE-2025-13177** – https://nvd.nist.gov/vuln/detail/CVE-2025-13177
+* **CVE-2025-12288** – https://nvd.nist.gov/vuln/detail/CVE-2025-12288
+* **CVE-2025-12287** – https://nvd.nist.gov/vuln/detail/CVE-2025-12287
+* **CVE-2025-12223** – https://nvd.nist.gov/vuln/detail/CVE-2025-12223
+* **CVE-2025-12222** – https://nvd.nist.gov/vuln/detail/CVE-2025-12222
+* **CVE-2025-7885** – https://nvd.nist.gov/vuln/detail/CVE-2025-7885
+* **CVE-2025-7543** – https://nvd.nist.gov/vuln/detail/CVE-2025-7543
+* **CVE-2025-7542** – https://nvd.nist.gov/vuln/detail/CVE-2025-7542
+* **CVE-2025-7534** – https://nvd.nist.gov/vuln/detail/CVE-2025-7534
+
 
 ...more will be added in the future.
 
